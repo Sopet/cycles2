@@ -5,15 +5,15 @@ public class Main {
         System.out.println("Задача 1");
         int salary = 0;
         int month = 0;
-        while (salary < 2_459_000) {
+        while (salary < 2_440_000) {
             salary += 15000;
-            month += 1;
-            System.out.println("Месяц " + month + ", сумма накоплений равна " + (salary-15000) + " рублей");
+            month ++;
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + salary + " рублей");
         }
         if (salary != 2_459_000) {
             salary += 14000;
-            month += 1;
-            System.out.println("Месяц " + month + ", сумма накоплений равна " + (salary-15000) + " рублей");
+            month ++;
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + salary + " рублей");
         }
 
 
@@ -32,12 +32,12 @@ public class Main {
         System.out.println("\n\nЗадача 3");
         int countryY = 12_000_000;
         int year = 0;
-        int birthRate = 17000;
-        int mortality = 8000;
+        int birthRate = 17;
+        int mortality = 8;
         while (year < 10) {
             year += 1;
-            countryY += ((birthRate - mortality)*12);
-            System.out.println("Год " + year + ", численность населения составляет " + (countryY-(birthRate - mortality)*12));
+            countryY += countryY * birthRate / 1000 - countryY * mortality / 1000;
+            System.out.println("Год " + year + ", численность населения составляет " + countryY);
         }
 
 
@@ -81,11 +81,9 @@ public class Main {
         System.out.println("\nЗадача 7");
         int days = 7;
         int monthsDay = 31;
-        int start = 0;
-        int friday = 1;
+        int friday = 5;
         System.out.println("Сегодня пятница, " + friday + "-е число");
-        while (start < monthsDay) {
-            start ++;
+        while (friday < monthsDay) {
             friday += days;
             if (friday < monthsDay) {
                 System.out.println("Сегодня пятница, " + friday + "-е число");
@@ -96,10 +94,11 @@ public class Main {
         System.out.println("\nЗадача 8");
         int firstYear = 0;
         int nextPeriod = 79;
-        int ourYear = 1817;
-        while (firstYear < 2000) {
+        int ourYear = 2025;
+        int beforeYear = ourYear - 200;
+        while (firstYear < ourYear) {
             firstYear += nextPeriod;
-            if (ourYear < firstYear) {
+            if (beforeYear < firstYear) {
                 System.out.println(firstYear);
             }
         }
