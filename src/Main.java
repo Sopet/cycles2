@@ -81,7 +81,7 @@ public class Main {
         System.out.println("\nЗадача 7");
         int days = 7;
         int monthsDay = 31;
-        int friday = 5;
+        int friday = 7;
         System.out.println("Сегодня пятница, " + friday + "-е число");
         while (friday < monthsDay) {
             friday += days;
